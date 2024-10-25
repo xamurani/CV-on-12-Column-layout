@@ -1,0 +1,257 @@
+/* Reset and Base Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+    color: #333;
+}
+
+body {
+    background-color: #94D9EA;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Main Container for 12-Column Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem; /* Space between columns */
+    width: 90%;
+    margin: 2rem auto;
+}
+
+/* Column Definitions */
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-9 {
+    grid-column: span 9;
+}
+
+/* Left Section */
+.left-section {
+    background-color: #00324A;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.left-content {
+    padding: 1rem;
+}
+
+.profile {
+    width: 100%;
+    border-bottom: 2px solid #002333;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.image img {
+    width: 80%;
+    border-radius: 50%;
+    border: 8px solid #002333;
+    transition: transform 0.3s ease;
+}
+
+.image img:hover {
+    transform: scale(1.1); /* Slightly scale on hover */
+}
+
+.name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.2rem 0;
+    color: #f7f7f7ec;
+}
+
+.career {
+    font-size: 1.2rem;
+    color: #94D9EA;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+
+.main-title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #f7f7f7ec;
+    padding-top: 2rem;
+}
+
+.contact-info ul {
+    padding-top: 2rem;
+}
+
+.contact-info ul li {
+    padding: .4rem 0;
+    display: flex;
+    align-items: center;
+    color: #718096;
+}
+
+.contact-info ul li i {
+    padding-right: 1rem;
+    font-size: 1.2rem;
+    color: #2D9CDB;
+    transition: color 0.3s ease;
+}
+
+.contact-info ul li:hover i {
+    color: #95d0f7; /* Change icon color on hover */
+}
+
+/* Skills Section */
+.skills-section ul {
+    padding-top: 2rem;
+}
+
+.skills-section ul li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: .4rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: .4rem;
+    background-color: #2f81ed5b;
+    position: relative;
+    border-radius: 12px;
+}
+
+.progress {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: #2D9CDB;
+    border-radius: 12px;
+}
+
+/* Progress widths for each skill */
+.js-progress { width: 70%; }
+.ps-progress { width: 90%; }
+.j-progress { width: 85%; }
+.c-progress { width: 40%; }
+.n-progress { width: 63%; }
+
+.skill-title {
+    text-transform: uppercase;
+    color: #f7f7f7;
+    font-size: 1rem;
+}
+
+/* Right Section */
+.right-section {
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.right-main-content {
+    padding: 1rem;
+}
+
+.right-title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2F80ED;
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.right-title::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: .2rem;
+    background-color: #ccc;
+    border-radius: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.para {
+    line-height: 1.6rem;
+    color: #718096;
+    font-size: 1.1rem;
+}
+
+.sect {
+    padding-bottom: 2rem;
+}
+
+/* Timeline */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tl-title {
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    color: #002333;
+    text-transform: uppercase;
+}
+
+.tl-title-2 {
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    color: #2D9CDB;
+    text-transform: uppercase;
+}
+
+.tl-content {
+    border-left: 1px solid #ccc;
+    padding-left: 2rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.tl-title-2::before {
+    content: "";
+    position: absolute;
+    width: .7rem;
+    height: .7rem;
+    background-color: #2D9CDB;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left: 0;
+}
+
+.references-section{
+
+    color: #f7f7f7;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 780px) {
+    .col-3, .col-9 {
+        grid-column: span 12; /* Stack columns on small screens */
+    }
+    .timeline {
+        grid-template-columns: 1fr; /* Single column timeline */
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .profile img {
+        width: 60%; /* Reduce profile image size on small screens */
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .name {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+    }
+}
